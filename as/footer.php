@@ -7,7 +7,7 @@
                 <img src="images/square-twitter-512.png" alt="Twitter logo" width="25" height="25" id="tw">
             </a>
         </div><br>
-        <p id="cp" class="no-new-line ">&copy; IISSI 2019</p>
+        <p id="cp" class="no-new-line ">&copy; IR 2020</p>
         <div class="cent" align="center">
             <p id="contact" class="cent"><a class="nosub" href="mailto:sigiazahar@gmail.com" target="_top">Contacto</a></p>
             <p id="aboutus" class="cent"> <a class="nosub" href="about_us.php" target="_top">Sobre nosotros</a></p>
