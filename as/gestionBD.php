@@ -5,7 +5,7 @@
  * @author SIGIWEB
  */
     function crearConexionBD() {
-        $host="oci:dbname=localhost/XE;charset=UTF8";
+        $host="oci:dbname=51.144.113.168/cdb1;charset=UTF8";
 	    $usuario="SIGI";
 	    $password="practica";
 	    try {
