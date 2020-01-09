@@ -1,4 +1,4 @@
-FROM unitekgsteam/nginx-php-fpm-oci8
+FROM victorhbfernandes/php-fpm-oracle-nginx
 
 RUN rm -f /var/www/html/index.html
 ADD as /var/www/html
