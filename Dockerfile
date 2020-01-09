@@ -38,7 +38,7 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 EXPOSE 80
 
 RUN rm -f /var/www/html/index.html
-ADD php.tar /var/www/html
+ADD as /var/www/html
 
 # Run Apache2 in Foreground
 CMD /usr/sbin/apache2 -D FOREGROUND
