@@ -1,4 +1,4 @@
-FROM caffeina/php-fpm-oci8
+FROM unitekgsteam/nginx-php-fpm-oci8
 
 RUN rm -f /var/www/html/index.html
 ADD as /var/www/html
