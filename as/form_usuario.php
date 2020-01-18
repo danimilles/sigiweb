@@ -106,16 +106,13 @@ if (isset($_SESSION["errores"])) {
                         <legend>Datos de alumno</legend>
                         <div class="">
                         <div><label>Programa académico:<em>*</em></label>
-                            <label><input type="radio" name="progAcademico" value="ESO" <?php if ($formulario["progAcademico"] == "ESO") echo " checked "; ?> />
-                                ESO</label>
-                            <label><input type="radio" name="progAcademico" value="BACHILLERATO" <?php if ($formulario["progAcademico"] == "BACHILLERATO") echo " checked "; ?> />
-                                Bachillerato</label>
-                            <label><input type="radio" name="progAcademico" value="FP Básica" <?php if ($formulario["progAcademico"] == "FP Básica") echo " checked "; ?> />
-                                FP Básica</label>
-                            <label><input type="radio" name="progAcademico" value="CFGM Gestión Administrativa" <?php if ($formulario["progAcademico"] == "CFGM Gestión Administrativa") echo " checked "; ?> />
-                                CFGM Gestión Administrativa</label>
-                            <label><input type="radio" name="progAcademico" value="CFGS Administración y Finanzas" <?php if ($formulario["progAcademico"] == "CFGS Administración y Finanzas") echo " checked "; ?> />
-                                CFGS Administración y Finanzas</label>
+			<label><select name="progAcademico" id="progAcademico"></label>
+				<option value="ESO" <?php if ($formulario["progAcademico"] == "ESO") echo " selected "; ?>>ESO</option>
+				<option value="BACHILLERATO" <?php if ($formulario["progAcademico"] == "BACHILLERATO") echo " selected "; ?>>Bachillerato</option>
+				<option value="FP Básica" <?php if ($formulario["progAcademico"] == "FP Básica") echo " selected "; ?> >FP Básica</option>
+				<option value="CFGM Gestión Administrativa" <?php if ($formulario["progAcademico"] == "CFGM Gestión Administrativa") echo " selected "; ?> >CFGM Gestión Administrativa</option>
+				<option value="CFGS Administración y Finanzas" <?php if ($formulario["progAcademico"] == "CFGS Administración y Finanzas") echo " selected "; ?> >CFGS Administración y Finanzas</option>
+                        </select>   
                         </div>
                         <div><label for="curso">
                             <input type="number" id="curso" name="curso" min="1" max="4" title="Curso" value="<?php echo $formulario["curso"] ?>" required />

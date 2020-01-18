@@ -353,12 +353,12 @@ CREATE OR REPLACE PROCEDURE reserva_aula
 (
     w_num_carne IN usuarios.num_carne%TYPE,
     w_numero IN aulas.numero%TYPE,
-    w_fecha IN reservasaulas.fecha_reserva%TYPE,
+    w_fecha IN VARCHAR2,
     w_tramo IN reservasaulas.tramo%TYPE
 ) IS 
 BEGIN
     carne_valido(w_num_carne);
-    INSERT INTO reservasaulas(num_carne, numero, fecha_reserva, tramo) VALUES (w_num_carne, w_numero, w_fecha, w_tramo);
+    INSERT INTO reservasaulas(num_carne, numero, fecha_reserva, tramo) VALUES (w_num_carne, w_numero, to_date(w_fecha, 'DD/MM/YYYY'), w_tramo);
     COMMIT WORK;
 END;
 /
@@ -369,12 +369,12 @@ CREATE OR REPLACE PROCEDURE reserva_material
 (
     w_num_carne IN usuarios.num_carne%TYPE,
     w_oid IN materiales.oid_m%TYPE,
-    w_fecha IN reservasmateriales.fecha_reserva%TYPE,
+    w_fecha IN VARCHAR2,
     w_tramo IN reservasmateriales.tramo%TYPE
 ) IS 
 BEGIN
     carne_valido(w_num_carne);
-    INSERT INTO reservasmateriales(num_carne, oid_m, fecha_reserva, tramo) VALUES (w_num_carne, w_oid, w_fecha, w_tramo);
+    INSERT INTO reservasmateriales(num_carne, oid_m, fecha_reserva, tramo) VALUES (w_num_carne, w_oid, to_date(w_fecha, 'DD/MM/YYYY'), w_tramo);
     COMMIT WORK;
 END;
 /

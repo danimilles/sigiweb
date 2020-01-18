@@ -1,0 +1,21 @@
+version: '3'
+services:
+        oracledb:
+                image: epiclabs/docker-oracle-xe-11g
+                environment:
+                        - ORACLE_ALLOW_REMOTE=true
+                expose:
+                        - 1521
+                ports:
+                        - "1521:1521"
+              
+        sigi_base:
+                depends_on:
+                        - oracledb
+                image: ramonfdlr/sigiweb
+                expose:
+                        - 80
+                ports:
+                        - "80:80"
+                links:
+                        - oracledb
