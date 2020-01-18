@@ -21,7 +21,7 @@
 
     function reservasAulasPorAulaTramo($con, $fecha, $aula, $tramo) {
         try {
-            $consulta = "SELECT * FROM AULAS NATURAL JOIN RESERVASAULAS WHERE (NUMERO=:aula AND FECHA_RESERVA=:fecha AND TRAMO=:tramo) ORDER BY NUMERO ASC";
+            $consulta = "SELECT * FROM AULAS NATURAL JOIN RESERVASAULAS WHERE (NUMERO=:aula AND FECHA_RESERVA=TO_DATE(:fecha , 'DD/MM/YYYY') AND TRAMO=:tramo) ORDER BY NUMERO ASC";
             $stmt = $con->prepare($consulta);
             $stmt->bindParam(":fecha", date("d/m/Y", strtotime($fecha)));
             $stmt->bindParam(":aula", $aula);

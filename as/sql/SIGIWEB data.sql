@@ -1,6 +1,6 @@
 -- #####################################################################################################
 -- #                                                                                                   #
--- #            INSERCI�N DE DATOS - SIGIWEB - LA CONTRASE�A DE LOS USUARIOS ES iissi2019              #
+-- #            INSERCI�N DE DATOS - SIGIWEB - LA CONTRASE�A DE LOS USUARIOS ES sigiir2020             #
 -- #                                                                                                   #
 -- #####################################################################################################
 
@@ -14,9 +14,9 @@ INSERT INTO Departamentos VALUES (1, 'Departamento de Educaci�n F�sica', nul
 EXECUTE IMMEDIATE 'ALTER TABLE USUARIOS DISABLE ALL TRIGGERS';
 --EXECUTE IMMEDIATE 'ALTER TRIGGER "SIGI"."TR_SEC_USUARIOS" DISABLE';
 
-INSERT INTO USUARIOS (NUM_CARNE, PASS, NOMBRE, APELLIDOS, FECHANACIMIENTO, SEXO, EMAIL, FECHA_INICIO_CARNE, FECHA_VALIDEZ_CARNE) VALUES ('00000P','$2y$10$MbUkmmHS0psxVBmoaYFBhektyS1J9UdroENskQbrJB6/DXLaLYwrW','Administrador', 'SIGI', '08/03/85', 'M', 'admin@mail.com', SYSDATE, '10/10/2090');
+INSERT INTO USUARIOS (NUM_CARNE, PASS, NOMBRE, APELLIDOS, FECHANACIMIENTO, SEXO, EMAIL, FECHA_INICIO_CARNE, FECHA_VALIDEZ_CARNE) VALUES ('00000P','$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Administrador', 'SIGI', '08/03/85', 'M', 'admin@mail.com', SYSDATE, '10/10/2090');
 UPDATE USUARIOS SET NUM_CARNE = '00000P' WHERE NOMBRE = 'Administrador';
-INSERT INTO USUARIOS (NUM_CARNE, PASS, NOMBRE, APELLIDOS, FECHANACIMIENTO, SEXO, EMAIL, FECHA_INICIO_CARNE, FECHA_VALIDEZ_CARNE) VALUES ('99999P','$2y$10$MbUkmmHS0psxVBmoaYFBhektyS1J9UdroENskQbrJB6/DXLaLYwrW','Bibliotecario','SIGI', '08/03/85', 'M', 'bib@mail.com', SYSDATE, '10/10/2090');
+INSERT INTO USUARIOS (NUM_CARNE, PASS, NOMBRE, APELLIDOS, FECHANACIMIENTO, SEXO, EMAIL, FECHA_INICIO_CARNE, FECHA_VALIDEZ_CARNE) VALUES ('99999P','$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Bibliotecario','SIGI', '08/03/85', 'M', 'bib@mail.com', SYSDATE, '10/10/2090');
 UPDATE USUARIOS SET NUM_CARNE = '99999P' WHERE NOMBRE = 'Bibliotecario';
 
 EXECUTE IMMEDIATE 'ALTER TABLE USUARIOS ENABLE ALL TRIGGERS';
@@ -24,29 +24,29 @@ EXECUTE IMMEDIATE 'ALTER TABLE USUARIOS ENABLE ALL TRIGGERS';
 
 
 
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Gustavo','Guti�rrez','71329879E','30/07/1999','M','dignissim.lacus.Aliquam@orci.co.uk','690413258','ESO',1,'A');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Marta','Garc�a','89289228N','30/04/1999','F','non@necanteblandit.co.uk','689480010','ESO',2,'B');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Jos�','Calvo','19510662F','30/08/2001','M','Donec.porttitor.tellus@urnaetarcu.org','659301282','ESO',3,'C');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Marcos','P�rez','41916984K','20/08/2000','M','nulla@Mauris.net','694675183','ESO',3,'A');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Julia','Mart�nez','98989269J','14/09/1999','F','dis.parturient.montes@ametluctus.net','639888702','ESO',2,'B');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Samuel','Alonso','78256829R','08/02/2002','M','Nullam.vitae.diam@pedeacurna.com','664054478','ESO',2,'C');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Juan Jos�','Cacho','78432654A','02/07/1999','M','juanjosecacho@orci.co.uk','690413258','ESO',1,'A');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Jos� Antonio','Martos','96381013H','14/04/1999','M','jamartos@necanteblandit.co.uk','689480010','ESO',2,'B');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Enrique','Recio','19510889C','28/02/2001','M','recio_enrique@urnaetarcu.org','659301282','ESO',3,'C');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Raquel','Gonz�lez','40175984X','25/01/2000','F','raqgonz@Mauris.net','694675183','ESO',3,'A');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Martina','San Jos�','90019269U','14/09/1999','F','saintjosephmartina@ametluctus.net','639888702','ESO',2,'B');
-ALTA_ALUMNO('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Arturo','V�zquez','78250139A','08/11/2001','M','vazqart@pedeacurna.com','664054478','ESO',2,'C');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Gustavo','Guti�rrez','71329879E','30/07/1999','M','dignissim.lacus.Aliquam@orci.co.uk','690413258','ESO',1,'A');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Marta','Garc�a','89289228N','30/04/1999','F','non@necanteblandit.co.uk','689480010','ESO',2,'B');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Jos�','Calvo','19510662F','30/08/2001','M','Donec.porttitor.tellus@urnaetarcu.org','659301282','ESO',3,'C');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Marcos','P�rez','41916984K','20/08/2000','M','nulla@Mauris.net','694675183','ESO',3,'A');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Julia','Mart�nez','98989269J','14/09/1999','F','dis.parturient.montes@ametluctus.net','639888702','ESO',2,'B');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Samuel','Alonso','78256829R','08/02/2002','M','Nullam.vitae.diam@pedeacurna.com','664054478','ESO',2,'C');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Juan Jos�','Cacho','78432654A','02/07/1999','M','juanjosecacho@orci.co.uk','690413258','ESO',1,'A');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Jos� Antonio','Martos','96381013H','14/04/1999','M','jamartos@necanteblandit.co.uk','689480010','ESO',2,'B');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Enrique','Recio','19510889C','28/02/2001','M','recio_enrique@urnaetarcu.org','659301282','ESO',3,'C');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Raquel','Gonz�lez','40175984X','25/01/2000','F','raqgonz@Mauris.net','694675183','ESO',3,'A');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Martina','San Jos�','90019269U','14/09/1999','F','saintjosephmartina@ametluctus.net','639888702','ESO',2,'B');
+ALTA_ALUMNO('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Arturo','V�zquez','78250139A','08/11/2001','M','vazqart@pedeacurna.com','664054478','ESO',2,'C');
 
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Lidia','M�rquez','46855676U','08/03/1985','F','luctus.sit.amet@ipsum.net','638058824','Departamento de Ingl�s');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Antonio','Sevilla','17276859N','20/09/1972','M','lorem@orci.ca','651780358','Departamento de Matem�ticas');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Atenea','Fern�ndez','89206182X','11/11/1961','F','euismod.urna@iaculisaliquet.net','686518375','Departamento de Lengua y Literatura');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Clara','S�nchez','74613335M','19/06/1966','F','Quisque.libero@sitamet.com','680764602','Departamento de Educaci�n F�sica');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Manuel','P�rez','47451443Y','26/01/1959','M','Curabitur.ut@nunc.com','608097594','Departamento de Ingl�s');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Luc�a','Ostos','47419457H','09/09/1984','F','amet@inlobortis.net','691795626','Departamento de Matem�ticas');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Gonzalo','Barrios','74553335M','19/01/1978','M','neighbourhoodsgonz@sitamet.com','680764602','Departamento de Educaci�n F�sica');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Olga','Valencia','47451863A','25/04/1969','F','olga_valencia_69@nunc.com','608097594','Departamento de Ingl�s');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Mart�n','Iglesias','22574876Z','10/12/1989','M','iglesiasmartin_89@inlobortis.net','691795626','Departamento de Matem�ticas');
-alta_profesor('$2y$10$oFYcttUiANp19q/95nWDtecngDhU.xVqTrszpEQhdVXyBA2g24wUi','Mar�a Jos�','Corbacho','47499857X','01/06/1970','F','corbacheramarijose@inlobortis.net','691795626','Departamento de Lengua y Literatura');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Lidia','M�rquez','46855676U','08/03/1985','F','luctus.sit.amet@ipsum.net','638058824','Departamento de Ingl�s');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Antonio','Sevilla','17276859N','20/09/1972','M','lorem@orci.ca','651780358','Departamento de Matem�ticas');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Atenea','Fern�ndez','89206182X','11/11/1961','F','euismod.urna@iaculisaliquet.net','686518375','Departamento de Lengua y Literatura');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Clara','S�nchez','74613335M','19/06/1966','F','Quisque.libero@sitamet.com','680764602','Departamento de Educaci�n F�sica');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Manuel','P�rez','47451443Y','26/01/1959','M','Curabitur.ut@nunc.com','608097594','Departamento de Ingl�s');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Luc�a','Ostos','47419457H','09/09/1984','F','amet@inlobortis.net','691795626','Departamento de Matem�ticas');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Gonzalo','Barrios','74553335M','19/01/1978','M','neighbourhoodsgonz@sitamet.com','680764602','Departamento de Educaci�n F�sica');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Olga','Valencia','47451863A','25/04/1969','F','olga_valencia_69@nunc.com','608097594','Departamento de Ingl�s');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Mart�n','Iglesias','22574876Z','10/12/1989','M','iglesiasmartin_89@inlobortis.net','691795626','Departamento de Matem�ticas');
+alta_profesor('$2y$10$5vKk5gQGlnJ.ToHfasK3vegDIqxbD1HEdTxjEqVKC2jxD4peUQ8bO','Mar�a Jos�','Corbacho','47499857X','01/06/1970','F','corbacheramarijose@inlobortis.net','691795626','Departamento de Lengua y Literatura');
 
 asignar_jefe_departamento('00001P');
 asignar_jefe_departamento('00002P');

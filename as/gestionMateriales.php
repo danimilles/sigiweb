@@ -149,7 +149,7 @@ function obtenerReservasMateriales($conexion,$val,$busqueda, $page_num, $page_si
 
 function reservasMaterialesPorTramo($con, $fecha, $material, $tramo) {
     try {
-        $consulta = "SELECT * FROM MATERIALES NATURAL JOIN RESERVASMATERIALES WHERE (OID_M = :oid_m AND FECHA_RESERVA=:fecha AND TRAMO=:tramo) ORDER BY OID_M ASC";
+        $consulta = "SELECT * FROM MATERIALES NATURAL JOIN RESERVASMATERIALES WHERE (OID_M = :oid_m AND FECHA_RESERVA=TO_DATE(:fecha , 'DD/MM/YYYY') AND TRAMO=:tramo) ORDER BY OID_M ASC";
         $stmt = $con->prepare($consulta);
         $stmt->bindParam(":fecha", date("d/m/Y", strtotime($fecha)));
         $stmt->bindParam(":oid_m", $material);
