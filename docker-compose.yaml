@@ -4,6 +4,7 @@ services:
                 image: epiclabs/docker-oracle-xe-11g
                 environment:
                         - ORACLE_ALLOW_REMOTE=true
+                        - RELAX_SECURITY=1
                 expose:
                         - 1521
                 ports:
