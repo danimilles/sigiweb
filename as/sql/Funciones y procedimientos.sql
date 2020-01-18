@@ -6,7 +6,7 @@
 -- GRUPO 3
 --
 -- (C)  DANIEL SANCHEZ BALEYRON
---      JORGE RAPOSO DÍAZ
+--      JORGE RAPOSO Dï¿½AZ
 --      JOSE RAMON FERNANDEZ DE LA ROSA
 --
 -- SISTEMA DE INTEGRAL DE GESTION DE INSTITUTOS - SIGI
@@ -14,7 +14,7 @@
 --***************************************************************************/
 
 
---Función para obtener el carné de un alumno a partir de la secuencia sec_alumno
+--Funciï¿½n para obtener el carnï¿½ de un alumno a partir de la secuencia sec_alumno
 
 CREATE OR REPLACE FUNCTION carne_alumno 
 (
@@ -45,13 +45,13 @@ END carne_alumno;
 
 --Procedimiento para dar de alta a un alumno
 
-CREATE OR REPLACE PROCEDURE alta_alumno 
+create or replace PROCEDURE alta_alumno 
 (
   pass IN VARCHAR2
 , nombre IN VARCHAR2 
 , apellidos IN VARCHAR2 
 , dni_al IN VARCHAR2 
-, fecha_nacimiento IN DATE 
+, fecha_nacimiento IN VARCHAR2 
 , sexo IN VARCHAR2 
 , email IN VARCHAR2 
 , telefono IN NUMBER 
@@ -61,7 +61,7 @@ CREATE OR REPLACE PROCEDURE alta_alumno
 ) IS
 carne CHAR(6);
 BEGIN 
-    INSERT INTO usuarios VALUES('11111A', pass, nombre, apellidos, dni_al, fecha_nacimiento, sexo, email, telefono, sysdate,
+    INSERT INTO usuarios VALUES('11111A', pass, nombre, apellidos, dni_al, to_date(fecha_nacimiento, 'DD/MM/YYYY'), sexo, email, telefono, sysdate,
     sysdate + (365*4)+1, null);
     SELECT carne_alumno(sec_alumnos.CURRVAL) INTO carne FROM dual;
     UPDATE alumnos SET programa_academico = prog_academico WHERE num_carne = carne;
@@ -138,7 +138,7 @@ CREATE OR REPLACE FUNCTION obtener_isbn_13
 BEGIN
     IF (LENGTH(isbn) < 10 OR NOT REGEXP_LIKE(isbn, '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]') OR
     (LENGTH(isbn) > 10 AND NOT REGEXP_LIKE(isbn, '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')))
-        THEN raise_application_error(-20003, 'El ISBN ' || isbn || ' no está en el formato correcto');
+        THEN raise_application_error(-20003, 'El ISBN ' || isbn || ' no estï¿½ en el formato correcto');
     END IF;
     
     IF LENGTH(isbn) = 10 
@@ -165,7 +165,7 @@ BEGIN
 END obtener_isbn_13;
 /
 
---Procedimiento que añade n ejemplares de un libro
+--Procedimiento que aï¿½ade n ejemplares de un libro
 
 CREATE OR REPLACE PROCEDURE add_n_ejemplares 
 (
@@ -181,7 +181,7 @@ BEGIN
 END;
 /
 
---Procedimiento para añadir un libro y n ejemplares del mismo
+--Procedimiento para aï¿½adir un libro y n ejemplares del mismo
 
 CREATE OR REPLACE PROCEDURE add_libro 
 (
@@ -250,7 +250,7 @@ BEGIN
     SELECT isbn INTO w_isbn FROM ejemplares WHERE codigo = w_codigo;
     
     IF w_disponible=0 THEN
-        raise_application_error(-20006, 'El libro no puede darse de baja porque está prestado');
+        raise_application_error(-20006, 'El libro no puede darse de baja porque estï¿½ prestado');
     END IF;
     
     UPDATE ejemplares SET fecha_baja = sysdate WHERE ejemplares.codigo = w_codigo;
@@ -310,7 +310,7 @@ BEGIN
 END;
 /
 
---Procedimiento para dar de baja un material. Si ese material está reservado no se da de baja.
+--Procedimiento para dar de baja un material. Si ese material estï¿½ reservado no se da de baja.
 
 CREATE OR REPLACE PROCEDURE baja_material
 (
@@ -325,7 +325,7 @@ BEGIN
     THEN SELECT fecha_reserva INTO w_fecha_reserva FROM reservasmateriales WHERE oid_m = w_oid_m;
   
         IF (w_fecha_reserva >= sysdate) THEN
-            raise_application_error(-20013, 'El material no se puede dar de baja ya que está reservado');
+            raise_application_error(-20013, 'El material no se puede dar de baja ya que estï¿½ reservado');
         END IF;
     END IF;
     
@@ -396,7 +396,7 @@ BEGIN
 END;
 /
 
---Función ASSERT_EQUALS, necesaria para las pruebas
+--Funciï¿½n ASSERT_EQUALS, necesaria para las pruebas
 
 CREATE OR REPLACE FUNCTION assert_equals 
 (
