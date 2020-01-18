@@ -12,7 +12,7 @@ services:
         sigi_base:
                 depends_on:
                         - oracledb
-                image: ramonfdlr/sigiweb
+                image: ramonfdlr/sigiweb:2
                 expose:
                         - 80
                 ports:
